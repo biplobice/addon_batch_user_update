@@ -1,5 +1,5 @@
 {
-  "name": "biplob/addon_batch_user_update",
+  "name": "biplob/batch_user_update",
   "description": "A concrete5 package to update all users at once from command line",
   "type": "concrete5-package",
   "keywords" : [
