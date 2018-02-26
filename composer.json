@@ -1,0 +1,25 @@
+{
+  "name": "biplob/addon_batch_user_update",
+  "description": "A concrete5 package to update all users at once from command line",
+  "type": "concrete5-package",
+  "keywords" : [
+    "concrete5",
+    "addon",
+    "add-on",
+    "extension",
+    "user",
+    "users",
+    "update",
+    "CLI"
+  ],
+  "license": "MIT",
+  "require": {
+    "php" : ">=5.3.3"
+  },
+  "authors" : [{
+    "name" : "Biplob Hossain",
+    "homepage" : "http://about.me/biplob",
+    "role" : "Developer"
+  }
+  ]
+}

@@ -13,7 +13,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'batch_user_update';
 
-    protected $appVersionRequired = '8.3.1';
+    protected $appVersionRequired = '8.2.0';
 
     protected $pkgVersion = '0.0.1';
 
