@@ -7,7 +7,7 @@ Update all user attributes from command line.
 ```bash
 $ cd YOUR_PROJECT_ROOT
 $ git clone git@github.com:biplobice/addon_batch_user_update.git packages/batch_user_update
-$ ./concrete/bin/concrete5 c5:package-install simple_database_export
+$ ./concrete/bin/concrete5 c5:package-install batch_user_update
 ```
 
 # How to Use
