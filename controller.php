@@ -2,11 +2,10 @@
 
 namespace Concrete\Package\BatchUserUpdate;
 
+use Concrete\Core\Application\Application;
 use Concrete\Core\Package\Package;
-use Concrete\Core\Support\Facade\Application;
 use Concrete\Package\BatchUserUpdate\Console\Command\UpdateUserCommand;
 use Job;
-use Core;
 
 
 class Controller extends Package
@@ -29,6 +28,15 @@ class Controller extends Package
         return t('Simply run concrete/bin/concrete5 c5:update-user from your project root directory to update the user attributes.');
     }
 
+    public function on_start()
+    {
+        if (Application::isRunThroughCommandLineInterface()) {
+            /** @var \Concrete\Core\Console\Application $console */
+            $console = $this->app->make('console');
+            $console->add(new UpdateUserCommand());
+        }
+    }
+
     public function install()
     {
         $pkg = parent::install();
@@ -46,16 +54,6 @@ class Controller extends Package
         $job = Job::getByHandle($jobHandle);
         if (!is_object($job)) {
             Job::installByPackage($jobHandle, $pkg);
-        }
-    }
-
-    public function on_start()
-    {
-        $app = Application::getFacadeApplication();
-        if ($app->isRunThroughCommandLineInterface()) {
-            /** @var Console $app */
-            $app = Core::make('console');
-            $app->add(new UpdateUserCommand());
         }
     }
 }
